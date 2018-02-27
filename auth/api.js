@@ -14,6 +14,11 @@ var getMovieList = () => {
       error: (error) => {
         reject(error);
       },
+    }).then(function(data){
+      console.log(".done");
+      var jsonData = JSON.stringify(data);
+      console.log(jsonData+"hi");
+      $('.results').html(jsonData);
     });
   });
 };
