@@ -26,7 +26,7 @@ var getMovieList = () => {
       return specificMovie;
     }).then(function(specificMovie){
       return $.ajax({
-        url: 'https://api.themoviedb.org/3/movie/now_playing?api_key=bbb0e77b94b09193e6f32d5fac7a3b9c&language=en-US&region=GR&append_to_response=credits',//&original_title
+        url: 'https://api.themoviedb.org/3/movie/' + specificMovie + '/credits?api_key=bbb0e77b94b09193e6f32d5fac7a3b9c',//&original_title
         method: 'GET',
         success: (response) => {
           console.log(response + "successResponse!");
@@ -35,8 +35,25 @@ var getMovieList = () => {
         error: (error) => {
           reject(error);
         },
+        return data;
       })
-  }).then(function(){
+  }).then(function(data){
+    var postData = function (data) {
+  // return new Promise ((resolve, reject) => {
+  return $.ajax({
+    url: 'http://localhost:3000' + "/movies",
+    method: 'POST',
+    data: data,
+      // success: (response) => {
+      // resolve(response);
+      // },
+      // error: (error) => {
+      //   reject(error);
+      // },
+      });
+    // });
+  };
+}).then(function(){
   var directors = [];
   var getDirectors = function (data){
       data.credits.crew.forEach(function(entry){

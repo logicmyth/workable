@@ -1,10 +1,20 @@
 .results {
-  background-color: #2440F2;
-  height: 1000px;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Greece.svg/2000px-Flag_of_Greece.svg.png);
+  background-size: cover;
+  height: 835px;
   width: 1000px;
 }
 
 .container {
-  height: 1000px;
+  height: 835px;
   width: 1000px;
+}
+
+.submit {
+  height: 50px;
+  width: 75px;
+  border-radius: 20%;
+  color: #0D5EAF;
+  border-color: #0D5EAF;
+  border-width: 1.5px;
 }
