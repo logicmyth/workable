@@ -3,15 +3,29 @@
   <head>
     <meta charset="utf-8">
     <title>Workable TMDB 3rd Party API App</title>
-    <!-- require jQuery via CDN -->
+    <!-- require jQuery & handlebars via CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/index.css">
     <script type="text/javascript" src="auth/events.js"></script>
     <script type="text/javascript" src="auth/api.js"></script>
     <script type="text/javascript" src="auth/ui.js"></script>
+    <script type="text/javascript" src="auth/templates/handlebars-v4.0.11.js"></script>
+    <!-- <script type='text/javascript' src='auth/templates/movie.handlebars'></script> -->
+    <script id="handlebars-demo" type="text/x-handlebars-template">
+      <ul>
+      {{#each movies as |movie| }}
+        <li>Title:{{movie.title}}
+        <li>Original Title:{{movie.original_title}}</li>
+        <li>Description:{{movie.overview}}</li>
+      {{/each}}
+      </ul>
+    </script>
+
   </head>
   <body>
     <div class="container">
+      Get current movies in Greece!
       <div class="results">
         <div class="description">
           description:
