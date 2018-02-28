@@ -35,7 +35,6 @@ var getMovieList = () => {
         error: (error) => {
           reject(error);
         },
-        return data;
       })
   }).then(function(data){
     var postData = function (data) {
